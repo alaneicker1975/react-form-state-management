@@ -20,7 +20,7 @@ const FormProvider = ({
   });
 
   return (
-    <FormContext.Provider value={{ form }}>{children}</FormContext.Provider>
+    <FormContext.Provider value={{ ...form }}>{children}</FormContext.Provider>
   );
 };
 

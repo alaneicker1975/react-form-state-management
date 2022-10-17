@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <form className="login-form" onSubmit={handleSubmit} noValidate>
       <div>
-        <label for={username.id}>{username.label}</label>
+        <label htmlFor={username.id}>{username.label}</label>
         <input
           type="text"
           id={username.id}
@@ -21,7 +21,7 @@ const Login = () => {
         />
       </div>
       <div>
-        <label for={password.id}>{password.label}</label>
+        <label htmlFor={password.id}>{password.label}</label>
         <input
           type="text"
           id={password.id}
