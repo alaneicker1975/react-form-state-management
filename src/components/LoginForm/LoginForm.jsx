@@ -1,9 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { useFormikContext } from '../../providers/FormProvider';
-import { fields } from './Login.model';
-
-// refactor to take props
+import { fields } from '../../models/Login.model';
 
 const LoginForm = () => {
   const { username, password } = fields;

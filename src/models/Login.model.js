@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import {
   createInitialValuesObject,
   createValidationSchema,
-} from '../../helpers/form';
+} from '../helpers/form';
 
 export const fields = {
   username: {
