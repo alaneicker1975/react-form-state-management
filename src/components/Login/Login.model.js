@@ -1,4 +1,8 @@
 import * as yup from 'yup';
+import {
+  createInitialValuesObject,
+  createValidationSchema,
+} from '../../helpers/form';
 
 export const fields = {
   username: {
@@ -17,10 +21,5 @@ export const fields = {
   },
 };
 
-export const initialValues = Object.fromEntries(
-  Object.entries(fields).map(([key, model]) => [key, model.defaultValue]),
-);
-
-export const validationSchema = Object.fromEntries(
-  Object.entries(fields).map(([key, model]) => [key, model.validator]),
-);
+export const initialValues = createInitialValuesObject(fields);
+export const validationSchema = createValidationSchema(fields);

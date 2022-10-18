@@ -1,7 +1,6 @@
-import './App.scss';
 import FormProvider from './providers/FormProvider';
 import Login, { initialValues, validationSchema } from './components/Login';
-import './App.scss';
+import './styles/main.scss';
 
 // This demo does not take into account how to handle pre-populated values from an API
 // request. All initial values by default are an empty string.
@@ -18,10 +17,15 @@ import './App.scss';
 // const mappedInitialValues = initialValues.map(model => ({ ...model, defaultValue: data[model.name] }));
 
 function App() {
+  const onSubmit = (form) => {
+    console.log(form);
+  };
+
   return (
     <FormProvider
       initialValues={initialValues}
       validationSchema={validationSchema}
+      onSubmit={onSubmit}
     >
       <Login />
     </FormProvider>

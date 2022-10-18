@@ -1,0 +1,23 @@
+.login-form {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 32px #eee;
+  width: auto;
+  padding: 24px;
+  text-align: center;
+
+  & > * + * {
+    margin-top: 16px;
+  }
+
+  &__error {
+    color: orangered;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+}
