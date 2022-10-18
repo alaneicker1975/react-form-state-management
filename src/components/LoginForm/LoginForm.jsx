@@ -23,17 +23,13 @@ const LoginForm = () => {
             error={errors[[field]] && touched[field]}
             helperText={errors[field]}
             variant="outlined"
+            size="small"
             fullWidth
           />
         </div>
       ))}
       <div>
-        <LoadingButton
-          loading={isSubmitting}
-          size="large"
-          variant="contained"
-          type="submit"
-        >
+        <LoadingButton loading={isSubmitting} variant="contained" type="submit">
           Log In
         </LoadingButton>
       </div>
