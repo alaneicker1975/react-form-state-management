@@ -10,11 +10,12 @@ const LoginForm = () => {
 
   return (
     <form className="login-form" onSubmit={handleSubmit} noValidate>
-      <h1>Log In</h1>
+      <h1 className="login-form__title">User Login</h1>
       {Object.entries(fields).map(
         ([field, { id, label, type = 'text', ...otherProps }]) => (
           <div key={id}>
             <TextField
+              type={type}
               id={id}
               label={label}
               name={field}
