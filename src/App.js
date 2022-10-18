@@ -1,7 +1,7 @@
 import LoginForm from './components/LoginForm';
 import FormProvider from './providers/Form.provider';
 import { initialValues, validationSchema } from './models/Login.model';
-import './styles/main.scss';
+import './App.scss';
 
 // This demo does not take into account how to handle pre-populated values from an API request.
 // All initial values by default are an empty string.
