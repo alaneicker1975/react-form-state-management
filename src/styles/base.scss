@@ -22,30 +22,6 @@ body {
   box-sizing: border-box;
 }
 
-input[type='text'],
-input[type='password'] {
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: inherit;
-  outline: none;
-  padding: 8px;
-  width: 100%;
-
-  &:focus {
-    border-color: lightseagreen;
-  }
-
-  &.has-error {
-    border-color: orangered;
-  }
-}
-
-label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
 h1,
 h2,
 h3,
@@ -53,25 +29,4 @@ h4,
 h5,
 h6 {
   margin: 0 0 20px;
-}
-
-button {
-  background: #444;
-  border: 0;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 600;
-  outline: none;
-  padding: 10px 16px;
-
-  &:hover {
-    background: darken(slategray, 8%);
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 2px lightseagreen;
-  }
 }

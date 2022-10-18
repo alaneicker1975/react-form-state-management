@@ -1,5 +1,6 @@
 import React from 'react';
-import classnames from 'classnames';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { useFormikContext } from '../../providers/FormProvider';
 import { fields } from '../../models/Login.model';
 
@@ -13,59 +14,26 @@ const LoginForm = () => {
       {Object.entries(fields).map(
         ([field, { id, label, type = 'text', ...otherProps }]) => (
           <div key={id}>
-            <label htmlFor={id}>{label}</label>
-            <input
+            <TextField
               id={id}
+              label={label}
               name={field}
-              type={type}
               onChange={handleChange}
               value={values[field]}
-              className={classnames('login-form__input', {
-                'has-error': errors[[field]] && touched[field],
-              })}
+              error={errors[[field]] && touched[field]}
+              helperText={errors[field]}
+              variant="outlined"
+              fullWidth
               {...otherProps}
             />
-            {errors[field] && touched[field] && (
-              <div className="login-form__error">{errors[field]}</div>
-            )}
           </div>
         ),
       )}
-      {/* <div>
-        <label htmlFor={username.id}>{username.label}</label>
-        <input
-          type="text"
-          id={username.id}
-          name={username.name}
-          onChange={handleChange}
-          value={values.username}
-          className={classnames('login-form__input', {
-            'has-error': errors.username && touched.username,
-          })}
-        />
-        {errors.username && touched.username && (
-          <div className="login-form__error">{errors.username}</div>
-        )}
-      </div>
       <div>
-        <label htmlFor={password.id}>{password.label}</label>
-        <input
-          type="password"
-          id={password.id}
-          name={password.name}
-          onChange={handleChange}
-          value={values.password}
-          className={classnames('login-form__input', {
-            'has-error': errors.password && touched.password,
-          })}
-        />
-        {errors.password && touched.password && (
-          <div className="login-form__error">{errors.password}</div>
-        )}
-      </div> */}
-      <button className="button" type="submit">
-        Log In
-      </button>
+        <Button size="large" variant="contained" type="submit">
+          Log In
+        </Button>
+      </div>
     </form>
   );
 };
