@@ -4,15 +4,32 @@ import { useFormikContext } from '../../providers/FormProvider';
 import { fields } from '../../models/Login.model';
 
 const LoginForm = () => {
-  const { username, password } = fields;
-
   const { errors, handleChange, handleSubmit, touched, values } =
     useFormikContext();
 
   return (
     <form className="login-form" onSubmit={handleSubmit} noValidate>
       <h1>Log In</h1>
-      <div>
+      {Object.entries(fields).map(([field, { id, label, ...otherProps }]) => (
+        <div key={id}>
+          <label htmlFor={id}>{label}</label>
+          <input
+            type="text"
+            id={id}
+            name={field}
+            onChange={handleChange}
+            value={values[field]}
+            className={classnames('login-form__input', {
+              'has-error': errors[[field]] && touched[field],
+            })}
+            {...otherProps}
+          />
+          {errors[field] && touched[field] && (
+            <div className="login-form__error">{errors[field]}</div>
+          )}
+        </div>
+      ))}
+      {/* <div>
         <label htmlFor={username.id}>{username.label}</label>
         <input
           type="text"
@@ -43,7 +60,7 @@ const LoginForm = () => {
         {errors.password && touched.password && (
           <div className="login-form__error">{errors.password}</div>
         )}
-      </div>
+      </div> */}
       <button className="button" type="submit">
         Log In
       </button>
