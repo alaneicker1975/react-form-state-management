@@ -1,5 +1,5 @@
 import LoginForm from './components/LoginForm';
-import FormProvider from './providers/FormProvider';
+import FormProvider from './providers/Form.provider';
 import { initialValues, validationSchema } from './models/Login.model';
 import './styles/main.scss';
 
