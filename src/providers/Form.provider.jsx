@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 
 const FormContext = createContext({});
-export const useFormikContext = () => useContext(FormContext);
+export const useFormContext = () => useContext(FormContext);
 
 const FormProvider = ({
   children,
