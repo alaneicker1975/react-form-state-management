@@ -10,25 +10,27 @@ const LoginForm = () => {
   return (
     <form className="login-form" onSubmit={handleSubmit} noValidate>
       <h1>Log In</h1>
-      {Object.entries(fields).map(([field, { id, label, ...otherProps }]) => (
-        <div key={id}>
-          <label htmlFor={id}>{label}</label>
-          <input
-            type="text"
-            id={id}
-            name={field}
-            onChange={handleChange}
-            value={values[field]}
-            className={classnames('login-form__input', {
-              'has-error': errors[[field]] && touched[field],
-            })}
-            {...otherProps}
-          />
-          {errors[field] && touched[field] && (
-            <div className="login-form__error">{errors[field]}</div>
-          )}
-        </div>
-      ))}
+      {Object.entries(fields).map(
+        ([field, { id, label, type = 'text', ...otherProps }]) => (
+          <div key={id}>
+            <label htmlFor={id}>{label}</label>
+            <input
+              id={id}
+              name={field}
+              type={type}
+              onChange={handleChange}
+              value={values[field]}
+              className={classnames('login-form__input', {
+                'has-error': errors[[field]] && touched[field],
+              })}
+              {...otherProps}
+            />
+            {errors[field] && touched[field] && (
+              <div className="login-form__error">{errors[field]}</div>
+            )}
+          </div>
+        ),
+      )}
       {/* <div>
         <label htmlFor={username.id}>{username.label}</label>
         <input
