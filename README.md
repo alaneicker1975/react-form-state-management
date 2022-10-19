@@ -1,12 +1,18 @@
 # React Form Architecture
 
-This repo demonstrates how to architect a form-based application using:
+This repo demonstrates how to architect a form-based application.
 
-- Formik: to handle form state
-- FormProvider: to create the Formik instance and share for form state across the component tree
-- Form model: to store the form field props and validators
+## Architecture
 
-### Setup
+### `src/providers/Form.provider.jsx`
+
+Accepts standard formik configuration parameters to create a Formik instance that's shared across the component tree.
+
+### `src/models/Login.model.js`
+
+Defines the form's schema including field attributes and validators.
+
+## Setup
 
 ```
 npm install && npm run start
