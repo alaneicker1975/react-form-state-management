@@ -6,10 +6,10 @@ export const createInitialValuesObject = (models) =>
   );
 
 export const createValidationSchema = (models) =>
-  yup
-    .object()
-    .shape(
-      Object.fromEntries(
-        Object.entries(models).map(([key, model]) => [key, model.validator]),
-      ),
-    );
+  yup.object().shape(
+    Object.fromEntries(
+      Object.entries(models)
+        .filter(([_, model]) => !!model.validator)
+        .map(([key, model]) => [key, model.validator]),
+    ),
+  );
