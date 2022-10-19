@@ -13,7 +13,7 @@ const LoginForm = () => {
     <form className="login-form" onSubmit={handleSubmit} noValidate>
       <h1 className="login-form__title">User Login</h1>
       {Object.entries(formSchema).map(
-        ([field, { id, label, type = 'text' }]) => (
+        ([field, { id, label, validator, type = 'text' }]) => (
           <div key={id}>
             <TextField
               type={type}
@@ -24,6 +24,7 @@ const LoginForm = () => {
               value={values[field]}
               error={errors[[field]] && touched[field]}
               helperText={errors[field]}
+              required={!!validator}
               variant="outlined"
               size="small"
               fullWidth
