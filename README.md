@@ -1,6 +1,6 @@
 # React Form Architecture
 
-This repo demonstrates how to architect a form-based application using Formik and REact context.
+This repo demonstrates how to architect a form-based application using Formik and React context.
 
 ## Architecture
 
